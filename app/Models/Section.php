@@ -25,4 +25,9 @@ class Section extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    public function courseUsers()
+    {
+        return $this->hasMany(User::class);
+    }
 }

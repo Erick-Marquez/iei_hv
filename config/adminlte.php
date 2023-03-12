@@ -339,6 +339,12 @@ return [
             'can'  => 'score-teacher.index',
             'icon' => 'fas fa-fw fa-book',
         ],
+        [
+            'text' => 'Notas Alumnos',
+            'route'  => 'score-student.index',
+            'can'  => 'score-student.index',
+            'icon' => 'fas fa-fw fa-book',
+        ],
     ],
 
     /*

@@ -42,9 +42,10 @@ class RoleSeeder extends Seeder
 
 
         Permission::create(['name' => 'score-teacher.index', 'description' => 'Ver Lista de Cursos para las notas'])->syncRoles([$director, $docente]);
-        
             Permission::create(['name' => 'score-teacher.add-score.index', 'description' => 'Lista de Notas para añadir al curso'])->syncRoles([$director, $docente]);
 
+        Permission::create(['name' => 'score-student.index', 'description' => 'Ver Lista de Cursos para las notas - Alumnos'])->syncRoles([$director, $alumno]);
+            Permission::create(['name' => 'score-student.show-score.index', 'description' => 'Lista de Notas por curso - Alumno'])->syncRoles([$director, $alumno]);
 
         Permission::create(['name' => 'course.index', 'description' => 'Ver Lista de Cursos'])->syncRoles([$director]);
         Permission::create(['name' => 'course.create', 'description' => 'Crear Curso'])->syncRoles([$director]);

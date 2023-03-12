@@ -3,6 +3,7 @@
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CourseTeacherController;
 use App\Http\Controllers\GradeController;
+use App\Http\Controllers\ScoreStudentController;
 use App\Http\Controllers\ScoreTeacherController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\StudentController;
@@ -46,6 +47,9 @@ Route::post('/cursos-docente/edit', [CourseTeacherController::class, 'edit'])->n
 
 Route::get('/notas-docente', [ScoreTeacherController::class, 'index'])->name('score-teacher.index');
 Route::get('/notas-docente/{id}/agregar', [ScoreTeacherController::class, 'addScore'])->name('score-teacher.add-score.index');
+
+Route::get('/notas-alumnos', [ScoreStudentController::class, 'index'])->name('score-student.index');
+Route::get('/notas-alumnos/{id}/notas', [ScoreStudentController::class, 'showScore'])->name('score-student.show-score.index');
 
 
 Route::get('/cursos', [CourseController::class, 'index'])->name('course.index');
