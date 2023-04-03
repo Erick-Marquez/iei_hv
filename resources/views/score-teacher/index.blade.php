@@ -30,7 +30,11 @@
                                 <td width="10px" class="align-middle">
                                     <div class="d-flex">
                                         @can('score-teacher.add-score.index')
-                                            <a class="btn btn-warning btn-sm m-1"  href="{{route('score-teacher.add-score.index', $course_user->id)}}"><i class="far fa-clipboard"></i></a>
+                                            <a class="btn btn-warning btn-sm m-1"  href="{{route('score-teacher.add-score.index', ['course' => $course_user->id, 'section' => $course_user->section->id, 'period' => 1])}}"><strong>I</strong></a>
+                                            <a class="btn btn-warning btn-sm m-1"  href="{{route('score-teacher.add-score.index', ['course' => $course_user->id, 'section' => $course_user->section->id, 'period' => 2])}}"><strong>II</strong></a>
+                                            <a class="btn btn-warning btn-sm m-1"  href="{{route('score-teacher.add-score.index', ['course' => $course_user->id, 'section' => $course_user->section->id, 'period' => 3])}}"><strong>III</strong></a>
+                                            <a class="btn btn-warning btn-sm m-1"  href="{{route('score-teacher.add-score.index', ['course' => $course_user->id, 'section' => $course_user->section->id, 'period' => 4])}}"><strong>IV</strong></a>
+                                            <a class="btn btn-warning btn-sm m-1"  href="{{route('score-teacher.add-score.index', ['course' => $course_user->id, 'section' => $course_user->section->id, 'period' => 5])}}"><i class="far fa-clipboard"></i></a>
                                         @endcan
                                     </div>
                                 </td>

@@ -85,7 +85,7 @@ class ScoreTeacherController extends Controller
         //
     }
     
-    public function addScore($id)
+    public function addScore($course, $section, $period)
     {
         $course = CourseUser::with([
             'user',  
@@ -96,7 +96,7 @@ class ScoreTeacherController extends Controller
                 $query->withCount('skills');
             }
         ])
-        ->findOrFail($id);
+        ->findOrFail($course);
         return view('score-teacher.add-score.index', compact('course'));
     }
 }
