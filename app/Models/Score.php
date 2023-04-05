@@ -31,6 +31,8 @@ class Score extends Model
 
         'pf2',
 
+        'cd',
+
         'period',
         'course_id',
         'section_id',

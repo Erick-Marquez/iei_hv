@@ -37,6 +37,8 @@ return new class extends Migration
 
             $table->string('pf2')->nullable();
 
+            $table->string('cd')->nullable();
+
             $table->string('period');
 
             $table->foreignId('course_id')

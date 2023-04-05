@@ -21,7 +21,16 @@ class ScoreStudentController extends Controller
     }
 
     public function showScore($course, $section, $period)
-    {
+    {   
+        if ($period == 5) {
+            $course = Course::findOrFail($course);
+            $scores = Score::where('course_id', $course->id)
+                ->where('section_id', $section)
+                ->where('user_id', auth()->id())
+                ->get();
+            return view('score-student.show-score.final', compact('scores', 'course'));
+        }
+
         $course = Course::findOrFail($course);
         $scores = Score::where('period', $period)
             ->where('course_id', $course->id)
