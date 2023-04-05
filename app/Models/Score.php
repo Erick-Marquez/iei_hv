@@ -33,6 +33,8 @@ class Score extends Model
 
         'period',
         'course_id',
+        'section_id',
+        'user_id',
     ];
 
     public function course()

@@ -16,26 +16,26 @@ return new class extends Migration
         Schema::create('scores', function (Blueprint $table) {
             $table->id();
             
-            $table->string('n1');
-            $table->string('n2');
-            $table->string('n3');
-            $table->string('n4');
-            $table->string('p1');
-            $table->string('pt1');
+            $table->string('n1')->nullable();
+            $table->string('n2')->nullable();
+            $table->string('n3')->nullable();
+            $table->string('n4')->nullable();
+            $table->string('p1')->nullable();
+            $table->string('pt1')->nullable();
             
-            $table->string('n5');
-            $table->string('n6');
-            $table->string('n7');
-            $table->string('n8');
-            $table->string('p2');
+            $table->string('n5')->nullable();
+            $table->string('n6')->nullable();
+            $table->string('n7')->nullable();
+            $table->string('n8')->nullable();
+            $table->string('p2')->nullable();
 
-            $table->string('n9');
-            $table->string('n10');
-            $table->string('n11');
-            $table->string('p3');
-            $table->string('pt2');
+            $table->string('n9')->nullable();
+            $table->string('n10')->nullable();
+            $table->string('n11')->nullable();
+            $table->string('p3')->nullable();
+            $table->string('pt2')->nullable();
 
-            $table->string('pf2');
+            $table->string('pf2')->nullable();
 
             $table->string('period');
 
