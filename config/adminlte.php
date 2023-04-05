@@ -327,12 +327,12 @@ return [
             'can'  => 'teacher.index',
             'icon' => 'fas fa-fw fa-book',
         ],
-        [
-            'text' => 'Cursos Docente',
-            'route'  => 'course-teacher.index',
-            'can'  => 'course-teacher.index',
-            'icon' => 'fas fa-fw fa-book',
-        ],
+        // [
+        //     'text' => 'Cursos Docente',
+        //     'route'  => 'course-teacher.index',
+        //     'can'  => 'course-teacher.index',
+        //     'icon' => 'fas fa-fw fa-book',
+        // ],
         [
             'text' => 'Notas Docente',
             'route'  => 'score-teacher.index',

@@ -23,14 +23,18 @@
                     </thead>
                     
                     <tbody>
-                        @foreach ($student->section->grade->courseGrades as $course_grade)
+                        @foreach ($courses->courses as $course)
                             <tr>
-                                <td class="align-middle">{{ $course_grade->course->name }}</td>
-                                <td class="align-middle">{{ $teachers[array_search($course_grade->course->id, array_column($teachers, 'id'))]['name'] }}</td>
+                                <td class="align-middle">{{ $course->course->name }}</td>
+                                <td class="align-middle">{{ $course->user->name }}</td>
                                 <td width="10px" class="align-middle">
                                     <div class="d-flex">
                                         @can('score-student.show-score.index')
-                                            <a class="btn btn-warning btn-sm m-1"  href="{{route('score-student.show-score.index', $course_grade->id)}}"><i class="far fa-clipboard"></i></a>
+                                            <a class="btn btn-warning btn-sm m-1"  href="{{route('score-student.show-score.index', ['course' => $course->course->id, 'section' => $courses->id, 'period' => 1])}}"><strong>I</strong></a>
+                                            <a class="btn btn-warning btn-sm m-1"  href="{{route('score-student.show-score.index', ['course' => $course->course->id, 'section' => $courses->id, 'period' => 2])}}"><strong>II</strong></a>
+                                            <a class="btn btn-warning btn-sm m-1"  href="{{route('score-student.show-score.index', ['course' => $course->course->id, 'section' => $courses->id, 'period' => 3])}}"><strong>III</strong></a>
+                                            <a class="btn btn-warning btn-sm m-1"  href="{{route('score-student.show-score.index', ['course' => $course->course->id, 'section' => $courses->id, 'period' => 4])}}"><strong>IV</strong></a>
+                                            <a class="btn btn-warning btn-sm m-1"  href="{{route('score-student.show-score.index', ['course' => $course->course->id, 'section' => $courses->id, 'period' => 5])}}"><i class="far fa-clipboard"></i></a>
                                         @endcan
                                     </div>
                                 </td>

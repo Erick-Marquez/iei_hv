@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\CourseUser;
+use App\Models\Score;
+use App\Models\Section;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -11,24 +14,20 @@ class ScoreStudentController extends Controller
     //
     public function index()
     {
-        $student = User::with('section.grade.courseGrades.course', 'section.courseUsers')->findOrFail(auth()->id());
-        $teachers = User::role('Docente')->get()->toArray();
+        $courses = Section::with('courses.user', 'courses.course')->findOrFail(auth()->user()->section_id);
         
-        return view('score-student.index', compact('student', 'teachers'));
+        
+        return view('score-student.index', compact('courses'));
     }
 
-    public function showScore($id)
+    public function showScore($course, $section, $period)
     {
-        $course = CourseUser::with([
-            'user',  
-            'section.grade', 
-            'section.students',
-            'course.skills',
-            'course' => function ($query) {
-                $query->withCount('skills');
-            }
-        ])
-        ->findOrFail($id);
-        return view('score-student.show-score.index', compact('course'));
+        $course = Course::findOrFail($course);
+        $scores = Score::where('period', $period)
+            ->where('course_id', $course->id)
+            ->where('section_id', $section)
+            ->where('user_id', auth()->id())
+            ->get();
+        return view('score-student.show-score.index', compact('scores', 'course'));
     }
 }

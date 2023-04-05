@@ -51,7 +51,7 @@ Route::post('/notas-docente/{course}/{section}/{period}/agregar', [ScoreTeacherC
 
 
 Route::get('/notas-alumnos', [ScoreStudentController::class, 'index'])->name('score-student.index');
-Route::get('/notas-alumnos/{id}/notas', [ScoreStudentController::class, 'showScore'])->name('score-student.show-score.index');
+Route::get('/notas-alumnos/{course}/{section}/{period}/notas', [ScoreStudentController::class, 'showScore'])->name('score-student.show-score.index');
 
 
 Route::get('/cursos', [CourseController::class, 'index'])->name('course.index');
