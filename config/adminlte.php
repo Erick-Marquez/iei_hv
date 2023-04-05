@@ -338,6 +338,7 @@ return [
             'route'  => 'score-teacher.index',
             'can'  => 'score-teacher.index',
             'icon' => 'fas fa-fw fa-book',
+            'active' => ['notas-docente/*/*/*/agregar']
         ],
         [
             'text' => 'Notas Alumnos',
